@@ -42,15 +42,15 @@ class RegisterUserState extends State {
     });
 
     // Getting value from Controller
-    String userName = nameController.text;
-    String userEmail = emailController.text;
-    String userPassword = passwordController.text;
+    String name = nameController.text;
+    String email = emailController.text;
+    String password = passwordController.text;
 
     // SERVER API URL
     var url = 'http://babyhealthybites.com/bhbserverside/scripts/registerUser.php';
 
     // Store all data with Param Name.
-    var data = {'name': userName, 'email': userEmail, 'password' : userPassword};
+    var data = {'userName': name, 'userEmail': email, 'userPassword' : password};
 
     // Starting Web API Call.
     var response = await http.post(url, body: json.encode(data));
